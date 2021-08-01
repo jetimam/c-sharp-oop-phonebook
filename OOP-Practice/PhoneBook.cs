@@ -8,6 +8,20 @@ namespace OOP_Practice
     {
         ArrayList contacts = new ArrayList();
 
+        public override string ToString()
+        {
+            string str = "";
+            int counter = 1;
+
+            foreach (Info contact in contacts)
+            {
+                str += counter + ". " + contact + "\n";
+                counter++;
+            }
+
+            return str;
+        }
+
         public void add(string name, string num)
         {
             contacts.Add(new Info(name, num));
@@ -41,19 +55,22 @@ namespace OOP_Practice
         public string searchDisplay(ArrayList searchResults)
         {
             string str = "";
+            int counter = 1;
 
             foreach (Info result in searchResults)
             {
-                str += result + "\n";
+                str += counter + ". " + result + "\n";
+                counter++;
             }
 
             return str;
         }
 
 
-        public void remove()
+        public void remove(int index)
         {
-
+            Console.WriteLine(contacts[index] + " has been deleted.");
+            contacts.RemoveAt(index);
         }
 
     }
