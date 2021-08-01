@@ -13,7 +13,7 @@ namespace OOP_Practice
             contacts.Add(new Info(name, num));
         }
 
-        public void search(string index) //TODO: FIX THE INFO TOSTRING()
+        public void search(string index)
         {
             ArrayList searchResults = new ArrayList();
             string substring;
@@ -21,13 +21,13 @@ namespace OOP_Practice
 
             foreach (Info contact in contacts)
             {
-                for (int i = 1; i < contact.getName().Length-1; i++)
+                for (int i = 1; i < contact.getName().Length - 1; i++)
                 {
-                    for (int j = 0; j < cap && cap < contact.getName().Length-1; j++)
+                    for (int j = 0; j < cap && cap < contact.getName().Length - 1; j++)
                     {
                         substring = contact.getName().Substring(j, i);
                         cap++;
-                        if (index == substring)
+                        if (index == substring.ToLower())
                         {
                             searchResults.Add(contact);
                         }
@@ -44,7 +44,7 @@ namespace OOP_Practice
 
             foreach (Info result in searchResults)
             {
-                str += result.ToString() + "\n";
+                str += result + "\n";
             }
 
             return str;

@@ -16,13 +16,9 @@ namespace OOP_Practice
 
         public override string ToString()
         {
-            string str = "";
-
-            str += "Name: " + this.name + ", Number: " + this.num;
-
-            return str;
+            return this.name + ": " + this.num;
         }
-        
+
         public string getName()
         {
             return this.name;
@@ -32,6 +28,6 @@ namespace OOP_Practice
         {
             return this.num;
         }
-        
+
     }
 }
