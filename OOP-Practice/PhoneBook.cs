@@ -31,22 +31,22 @@ namespace OOP_Practice
         {
             ArrayList searchResults = new ArrayList();
             string substring;
-            int cap = 1;
+            int cap = 0;
 
             foreach (Info contact in contacts)
-            {
-                for (int i = 1; i < contact.getName().Length - 1; i++)
+            { //Umut Ucak
+                for (int i = 1; i < contact.getName().Length; i++)
                 {
-                    for (int j = 0; j < cap && cap < contact.getName().Length - 1; j++)
+                    for (int j = 0; j < contact.getName().Length - cap; j++)
                     {
                         substring = contact.getName().Substring(j, i);
-                        cap++;
+                        
                         if (index == substring.ToLower())
                         {
                             searchResults.Add(contact);
                         }
                     }
-                    cap = 1;
+                    cap++;
                 }
             }
             Console.WriteLine(searchDisplay(searchResults));
