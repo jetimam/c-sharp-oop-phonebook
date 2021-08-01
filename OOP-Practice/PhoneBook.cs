@@ -34,13 +34,13 @@ namespace OOP_Practice
             int cap = 0;
 
             foreach (Info contact in contacts)
-            { //Umut Ucak
+            {
                 for (int i = 1; i < contact.getName().Length; i++)
                 {
                     for (int j = 0; j < contact.getName().Length - cap; j++)
                     {
                         substring = contact.getName().Substring(j, i);
-                        
+
                         if (index == substring.ToLower())
                         {
                             searchResults.Add(contact);
